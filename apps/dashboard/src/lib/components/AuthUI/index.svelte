@@ -24,7 +24,7 @@
 
     const params = new URLSearchParams(window.location.search);
     console.log({ params });
-    // const redirectTo = `https://app.classroomio.com?forwardTo=${
+    // const redirectTo = `https://app.salera.vn?forwardTo=${
     //   window.location.origin + params.get('redirect')
     // }`;
     const redirectTo = `${window.location.origin + params.get('redirect')}`;

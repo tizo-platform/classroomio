@@ -11,7 +11,7 @@ export async function POST({ request }) {
 
   const emailData = [
     {
-      from: `"Best from ClassroomIO" <notify@mail.classroomio.com>`,
+      from: `"Best from ClassroomIO" <notify@mail.salera.vn>`,
       to,
       subject: 'Welcome to ClassroomIO!',
       content: `
@@ -24,7 +24,7 @@ export async function POST({ request }) {
         Interested? just book a 30mn demo slot in our calendar!
       </p>
       <div>
-        <a href="https://classroomio.com/demo">Book demo</a>
+        <a href="https://salera.vn/demo">Book demo</a>
       </div>
       <p>
         PS: I reply personally to every email. We don't have an outsourced support team at the other end of the globe.. ;-)

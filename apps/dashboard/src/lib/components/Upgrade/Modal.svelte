@@ -81,7 +81,7 @@
   }
 
   function onLearnMore() {
-    window.open('https://classroomio.com/blog/early-adopter', '_blank');
+    window.open('https://salera.vn/blog/early-adopter', '_blank');
   }
   function toggleIsYearlyPlan() {
     isYearlyPlan = !isYearlyPlan;

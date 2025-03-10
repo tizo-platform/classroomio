@@ -33,7 +33,7 @@
       {/if}
     </ul>
     <a
-      href="https://classroomio.com"
+      href="https://salera.vn"
       target="_blank"
       rel="noopener noreferrer"
       class="flex items-center gap-1 text-blue-600 hover:underline dark:text-white"
