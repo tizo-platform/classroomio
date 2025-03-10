@@ -1,6 +1,6 @@
-import type { MetaTagsProps } from 'svelte-meta-tags';
+import { getSupabase, supabase } from '$lib/utils/functions/supabase';
 import { fetchCourse } from '$lib/utils/services/courses';
-import { supabase, getSupabase } from '$lib/utils/functions/supabase';
+import type { MetaTagsProps } from 'svelte-meta-tags';
 
 if (!supabase) {
   getSupabase();
@@ -33,7 +33,7 @@ export const load = async ({ params = { slug: '' } }) => {
       title: data?.title,
       description: data?.description,
       image: data?.logo,
-      imageAlt: 'ClassroomIO OG Image'
+      imageAlt: 'Salera OG Image'
     }
   }) satisfies MetaTagsProps;
 
