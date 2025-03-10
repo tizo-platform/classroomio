@@ -9,12 +9,15 @@ version: '3.8'
 services:
   backend:
     build:
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.prod
       context: ./apps/backend
     volumes:
       - /app/node_modules
       - ./apps/backend:/app
+    expose:
+      - 3000
     environment:
+      - PORT=3000
       - NODE_ENV=production
       # Supabase - Database
       - PUBLIC_SUPABASE_ANON_KEY=${PUBLIC_SUPABASE_ANON_KEY}
@@ -33,7 +36,7 @@ services:
 
   dashboard:
     build:
-      dockerfile: ./apps/dashboard/Dockerfile
+      dockerfile: ./apps/dashboard/Dockerfile.prod
       context: ./
       args:
         - PUBLIC_SUPABASE_URL=${PUBLIC_SUPABASE_URL}
@@ -45,10 +48,6 @@ services:
         - OPENAI_API_KEY=${OPENAI_API_KEY}
         - PUBLIC_SERVER_URL=${PUBLIC_SERVER_URL}
         - PUBLIC_IP_REGISTRY_KEY=${PUBLIC_IP_REGISTRY_KEY}
-    volumes:
-      - .:/app
-      - /app/node_modules
-      - /app/apps/dashboard/node_modules
     environment:
       - IS_SELFHOSTED=true
       - DEPLOYMENT_PROVIDER=docker
@@ -62,5 +61,5 @@ services:
       - OPENAI_API_KEY=${OPENAI_API_KEY}
       - PUBLIC_SERVER_URL=${PUBLIC_SERVER_URL} # this is the url to the backend service
       - PUBLIC_IP_REGISTRY_KEY=${PUBLIC_IP_REGISTRY_KEY}
-    depends_on:
-      - backend
+    # depends_on:
+    #   - backend
