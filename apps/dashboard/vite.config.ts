@@ -25,13 +25,14 @@ export default ({ mode }) => {
   });
 };
 
-function getServer({ VITE_USE_HTTPS_ON_LOCALHOST }) {
+function getServer({ VITE_USE_HTTPS_ON_LOCALHOST, PORT }) {
   if (VITE_USE_HTTPS_ON_LOCALHOST === 'true') {
     return {
       https: {
         key: fs.readFileSync(`${__dirname}/cert/key.pem`),
         cert: fs.readFileSync(`${__dirname}/cert/cert.pem`)
-      }
+      },
+      port: `${PORT ?? '5173'}`
     };
   }
 }
